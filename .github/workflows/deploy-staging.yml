@@ -26,6 +26,7 @@ jobs:
         with:
           node-version: 14.x
           run: |
+            npm audit fix
             npm install
             npm run build
             
