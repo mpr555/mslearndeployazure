@@ -20,16 +20,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: npm install and build webpack
-        with:
-          node-version: 14.x        
-      - run: npm install
-      - run: npm run build
-      - uses: actions/upload-artifact@v3
-        with:
-          name: webpack artifacts
-          path: public/
+    - uses: actions/checkout@v3
+    - name: npm install and build webpack
+      with:
+        node-version: 14.x        
+    - run: npm install
+    - run: npm run build
+      
+    - uses: actions/upload-artifact@v3
+      with:
+        name: webpack artifacts
+        path: public/
 
   Build-Docker-Image:
     runs-on: ubuntu-latest
